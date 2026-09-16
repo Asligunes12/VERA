@@ -1,0 +1,6 @@
+@VERA.API_HostAddress = http://localhost:5098
+
+GET {{VERA.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

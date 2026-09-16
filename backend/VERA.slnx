@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="VERA.API/VERA.API.csproj" />
+  <Project Path="VERA.Application/VERA.Application.csproj" />
+  <Project Path="VERA.Domain/VERA.Domain.csproj" />
+  <Project Path="VERA.Infrastructure/VERA.Infrastructure.csproj" />
+  <Project Path="VERA.Tests/VERA.Tests.csproj" />
+</Solution>

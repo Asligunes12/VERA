@@ -1,0 +1,124 @@
+# VERA
+
+## Software Requirements Specification (SRS)
+
+**Version:** 1.0
+
+**Prepared By:** Aslı Güneş
+
+**Project Name:** VERA
+
+**Date:** 21.07.2026
+
+---
+
+# 1. Proje Tanımı
+
+VERA, hayvancılık sektörünü dijital ortama taşıyan modern bir web ve mobil platformudur.
+
+Platform sayesinde kullanıcılar hayvan ilanı oluşturabilir, hayvan alım satımı yapabilir, canlı mezatlara katılabilir, satıcılarla mesajlaşabilir ve güvenli bir şekilde ticaret gerçekleştirebilir.
+
+İlk sürümde web platformu geliştirilecek, ilerleyen aşamalarda aynı altyapıyı kullanan Android ve iOS mobil uygulamaları geliştirilecektir.
+
+---
+
+# 2. Projenin Amacı
+
+VERA'nın amacı, üreticiler ile alıcıları güvenilir, hızlı ve kullanıcı dostu bir platformda buluşturarak hayvancılık sektörünün dijital dönüşümüne katkı sağlamaktır.
+
+Platform sayesinde kullanıcılar zamandan tasarruf edecek, daha geniş bir pazara ulaşabilecek ve güvenilir bir ticaret ortamında işlem yapabilecektir.
+
+---
+
+# 3. Proje Vizyonu
+
+VERA'nın vizyonu, Türkiye'nin en güvenilir dijital hayvancılık platformu olmak ve gelecekte uluslararası pazarda da hizmet verebilen kapsamlı bir ekosistem oluşturmaktır.
+
+Platform ilerleyen sürümlerde yalnızca hayvan satışını değil;
+
+- Canlı mezat sistemini
+- Tarım marketini
+- Veteriner hizmetlerini
+- Yapay zekâ destekli fiyat analizlerini
+- Eğitim ve bilgi paylaşımını
+
+tek bir platform altında toplamayı hedeflemektedir.
+---
+
+# 4. Kullanıcı Rolleri
+Platform ilerleyen sürümlerde yalnızca hayvan satışını değil;
+
+- Canlı mezat sistemini
+- Tarım marketini
+- Veteriner hizmetlerini
+- Yapay zekâ destekli fiyat analizlerini
+- Eğitim ve bilgi paylaşımını
+
+tek bir platform altında toplamayı hedeflemektedir.
+
+---
+## 4.1 Alıcı (Buyer)
+
+Alıcı, platform üzerinden hayvan ilanlarını inceleyen ve satın alma işlemlerini gerçekleştiren kullanıcıdır.
+
+### Yetkileri
+
+- Sisteme kayıt olabilir.
+- Giriş ve çıkış yapabilir.
+- Profil bilgilerini düzenleyebilir.
+- Hayvan ilanlarını görüntüleyebilir.
+- Arama ve filtreleme yapabilir.
+- İlan detaylarını inceleyebilir.
+- Satıcı profillerini görüntüleyebilir.
+- Satıcıya mesaj gönderebilir.
+- Canlı mezatlara katılabilir.
+- İlanları favorilerine ekleyebilir ve favorilerinden kaldırabilir.
+- Satıcıları takip edebilir.
+- Bildirim alabilir.
+- Satıcıları puanlayabilir ve yorum yapabilir.
+- Uygunsuz ilanları şikâyet edebilir.
+
+---
+
+## 4.2 Satıcı (Seller)
+
+Satıcı, platform üzerinden hayvan ilanı oluşturan ve satış işlemlerini yöneten kullanıcıdır.
+
+### Yetkileri
+
+- Sisteme kayıt olabilir.
+- Giriş ve çıkış yapabilir.
+- Profil bilgilerini düzenleyebilir.
+- Hayvan ilanı oluşturabilir.
+- İlanlarını düzenleyebilir.
+- İlanlarını silebilir.
+- Bir ilana birden fazla fotoğraf yükleyebilir.
+- Hayvan bilgilerini güncelleyebilir.
+- Sağlık belgesi veya gerekli dokümanları ekleyebilir.
+- Canlı mezat oluşturabilir.
+- Mezatlarını yönetebilir.
+- Alıcılarla mesajlaşabilir.
+- Satış geçmişini görüntüleyebilir.
+- Bildirim alabilir.
+- Alıcıları değerlendirebilir.
+
+---
+
+## 4.3 Yönetici (Admin)
+
+Yönetici, sistemin güvenli ve düzenli çalışmasını sağlayan en yetkili kullanıcıdır.
+
+### Yetkileri
+
+- Kullanıcı hesaplarını yönetebilir.
+- İlanları onaylayabilir veya kaldırabilir.
+- Şikâyetleri inceleyebilir.
+- Canlı mezatları yönetebilir.
+- Gerekli durumlarda kullanıcı hesaplarını askıya alabilir.
+- Doğrulanmış satıcı rozetlerini yönetebilir.
+- Sistem istatistiklerini görüntüleyebilir.
+- Kategori ve filtreleri yönetebilir.
+- Bildirim duyuruları yayınlayabilir.
+- Sistem ayarlarını yönetebilir.
+
+
