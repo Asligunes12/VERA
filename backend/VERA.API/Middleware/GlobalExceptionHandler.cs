@@ -32,8 +32,11 @@ public class GlobalExceptionHandler
 
     await context.Response.WriteAsJsonAsync(response);
 }
-   catch (Exception)
-   {
+   catch (Exception ex)
+{
+    Console.WriteLine("=== VERA INTERNAL ERROR ===");
+    Console.WriteLine(ex.ToString());
+
     context.Response.StatusCode =
         StatusCodes.Status500InternalServerError;
 
@@ -46,6 +49,6 @@ public class GlobalExceptionHandler
     };
 
     await context.Response.WriteAsJsonAsync(response);
-    }
+}
     }
 }

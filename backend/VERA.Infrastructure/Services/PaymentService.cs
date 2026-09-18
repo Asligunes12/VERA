@@ -3,6 +3,7 @@ using VERA.Application.DTOs.Payments;
 using VERA.Application.Services;
 using VERA.Domain.Entities;
 using VERA.Infrastructure.Persistence;
+using VERA.Application.Exceptions;
 
 namespace VERA.Infrastructure.Services;
 
@@ -415,9 +416,12 @@ public class PaymentService : IPaymentService
             !w.IsDeleted);
 
     if (wallet is null)
-        throw new InvalidOperationException(
-            "Kullanıcı cüzdanı bulunamadı.");
-
+{
+    throw new AppException(
+        "Kullanıcı cüzdanı bulunamadı.",
+        "WALLET_NOT_FOUND",
+        404);
+}
     if (wallet.AvailableBalance < request.Amount)
         throw new InvalidOperationException(
             "Kullanılabilir bakiye para çekme işlemi için yetersiz.");

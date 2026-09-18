@@ -230,8 +230,10 @@ public class AuthService : IAuthService
         var key = _configuration["Jwt:Key"];
 
         if (string.IsNullOrWhiteSpace(key))
-            throw new InvalidOperationException(
-                "JWT anahtarı yapılandırılmamış.");
+    throw new AppException(
+        "JWT anahtarı yapılandırılmamış.",
+        "JWT_KEY_NOT_CONFIGURED",
+        500);
 
         var claims = new[]
         {

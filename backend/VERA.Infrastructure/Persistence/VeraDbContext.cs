@@ -21,6 +21,7 @@ public class VeraDbContext : DbContext
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<BankAccount> BankAccounts { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<Verification> Verifications { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
