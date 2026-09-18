@@ -35,6 +35,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IVerificationService, VerificationService>();
+builder.Services.AddScoped<IListingService, ListingService>();
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
