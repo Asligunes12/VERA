@@ -47,4 +47,11 @@ public class ListingController : ControllerBase
 
         return Ok(listings);
     }
+        [HttpGet("{listingId:guid}")]
+    public async Task<IActionResult> GetById(Guid listingId)
+    {
+        var listing = await _listingService.GetByIdAsync(listingId);
+
+        return Ok(listing);
+    }
 }

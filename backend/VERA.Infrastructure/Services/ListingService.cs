@@ -107,44 +107,93 @@ public class ListingService : IListingService
 
         return listing.ListingId;
     }
+
     public async Task<List<ListingResponse>> GetAllAsync()
-{
-    var listings = await _context.Listings
-        .AsNoTracking()
-        .Include(l => l.Animals)
-        .Where(l =>
-            !l.IsDeleted &&
-            l.Status == "Active")
-        .OrderByDescending(l => l.CreatedAt)
-        .ToListAsync();
-
-    return listings.Select(l => new ListingResponse
     {
-        ListingId = l.ListingId,
-        Title = l.Title,
-        Description = l.Description,
-        SaleType = l.SaleType,
-        Status = l.Status,
-        Location = l.Location,
-        CreatedAt = l.CreatedAt,
+        var listings = await _context.Listings
+            .AsNoTracking()
+            .Include(l => l.Animals)
+            .Where(l =>
+                !l.IsDeleted &&
+                l.Status == "Active")
+            .OrderByDescending(l => l.CreatedAt)
+            .ToListAsync();
 
-        Animals = l.Animals
-            .Where(a => !a.IsDeleted)
-            .Select(a => new ListingAnimalResponse
-            {
-                AnimalId = a.AnimalId,
-                Category = a.Category,
-                Breed = a.Breed,
-                AgeMonths = a.AgeMonths,
-                Gender = a.Gender,
-                Quantity = a.Quantity,
-                IsGroupSale = a.IsGroupSale,
-                UnitPrice = a.UnitPrice,
-                TotalPrice = a.TotalPrice,
-                HealthInfo = a.HealthInfo,
-                Location = a.Location
-            })
-            .ToList()
-    }).ToList();
-}
+        return listings.Select(l => new ListingResponse
+        {
+            ListingId = l.ListingId,
+            Title = l.Title,
+            Description = l.Description,
+            SaleType = l.SaleType,
+            Status = l.Status,
+            Location = l.Location,
+            CreatedAt = l.CreatedAt,
+
+            Animals = l.Animals
+                .Where(a => !a.IsDeleted)
+                .Select(a => new ListingAnimalResponse
+                {
+                    AnimalId = a.AnimalId,
+                    Category = a.Category,
+                    Breed = a.Breed,
+                    AgeMonths = a.AgeMonths,
+                    Gender = a.Gender,
+                    Quantity = a.Quantity,
+                    IsGroupSale = a.IsGroupSale,
+                    UnitPrice = a.UnitPrice,
+                    TotalPrice = a.TotalPrice,
+                    HealthInfo = a.HealthInfo,
+                    Location = a.Location
+                })
+                .ToList()
+        }).ToList();
+    }
+
+    public async Task<ListingResponse> GetByIdAsync(Guid listingId)
+    {
+        var listing = await _context.Listings
+            .AsNoTracking()
+            .Include(l => l.Animals)
+            .FirstOrDefaultAsync(l =>
+                l.ListingId == listingId &&
+                !l.IsDeleted &&
+                l.Status == "Active");
+
+        if (listing is null)
+        {
+            throw new AppException(
+                "İlan bulunamadı.",
+                "LISTING_NOT_FOUND",
+                404);
+        }
+
+        return new ListingResponse
+        {
+            ListingId = listing.ListingId,
+            Title = listing.Title,
+            Description = listing.Description,
+            SaleType = listing.SaleType,
+            Status = listing.Status,
+            Location = listing.Location,
+            CreatedAt = listing.CreatedAt,
+
+            Animals = listing.Animals
+                .Where(a => !a.IsDeleted)
+                .Select(a => new ListingAnimalResponse
+                {
+                    AnimalId = a.AnimalId,
+                    Category = a.Category,
+                    Breed = a.Breed,
+                    AgeMonths = a.AgeMonths,
+                    Gender = a.Gender,
+                    Quantity = a.Quantity,
+                    IsGroupSale = a.IsGroupSale,
+                    UnitPrice = a.UnitPrice,
+                    TotalPrice = a.TotalPrice,
+                    HealthInfo = a.HealthInfo,
+                    Location = a.Location
+                })
+                .ToList()
+        };
+    }
 }

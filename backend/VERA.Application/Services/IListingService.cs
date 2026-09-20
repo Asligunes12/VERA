@@ -9,4 +9,6 @@ public interface IListingService
         CreateListingRequest request);
 
     Task<List<ListingResponse>> GetAllAsync();
+
+    Task<ListingResponse> GetByIdAsync(Guid listingId);
 }
